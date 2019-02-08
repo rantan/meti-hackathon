@@ -20,7 +20,7 @@ Hello, Ethereum! スマートコントラクトの開発を学んで、Ethereum 
 * Solidity の言語仕様の解説  
 後述のドキュメントを参照してください。
 
-### リファレンス
+## リファレンス
 
 本ワークショップで利用するツール、ライブラリのドキュメントです。どのツールもドキュメントがちゃんと整備して
 あって素晴らしいですね。困ったら参考にしてください。
@@ -32,12 +32,17 @@ Hello, Ethereum! スマートコントラクトの開発を学んで、Ethereum 
 
 ## ワークショップのステップ
 
-1. [事前準備](#step0)
-2. [プロジェクトの動作を把握する](#step1)
-4. ローカルでデプロイして動かす
-5. テストネットにデプロイする
+1. [事前準備](#step1)
+2. [プロジェクトの動作を把握する](#step2)
+3. [Truffle プロジェクトの作成](#step3)
+4. [最初のスマートコントラクトを作る](#step4)
+5. [スマートコントラクトを Ethereum シミュレータにデプロイする](#step5)
+6. [DApp のフロントエンドを作る](#step6)
+7. [Ethereum シミュレーターにつないで DApp を動かす](#step7)
+8. [テストネットで DApp を動かす](#step8)
+9. [最後に](#step9)
 
-## <a name="step0">1. 事前準備</a>
+## <a name="step1">1. 事前準備</a>
 
 #### MetaMaskのセットアップ
 
@@ -63,38 +68,22 @@ Hello, Ethereum! スマートコントラクトの開発を学んで、Ethereum 
     $ node --version
     v11.6.0
     $ npm --version
-    6.7.0
+    6.7.0 
 
-#### リポジトリの clone
-
-本リポジトリを適当なローカルのパスに clone してください。
-
-    $ git clone git@github.com:rantan/meti-hackathon.git 
-
-#### npm install
-
-リポジトリを clone したら、利用するパッケージをインストールしてください。
-
-    $ cd meti-hackathon
-    $ npm install
-
-## <a name="step1">1. プロジェクトの動作を把握する</a>
+## <a name="step2">2. プロジェクトの動作を把握する</a>
 
 まずはこのリポジトリで一体何ができるのか把握しましょう。
 
 注) MetaMask をインストールしていない方は先に[ここ(MetaMaskの使い方)](https://medium.com/@cryptoplanet.io/metamask%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9-76568ab4efd3)を参考にインストールしてください。
 
-[Live Demo へアクセス]()
-
-
-TODO: どこかへデプロイする
+[Live Demo へアクセス](http://sauravtom.com/hello-world-ethereum-blockchain/)
 
 
 ![Live Demo](https://raw.githubusercontent.com/rantan/meti-hackathon/master/images/01.png "Live Demo")
 
 スマートコントラクトのデータを読み出し、書き換えるだけの簡単な DApp です。
 
-## Truffle プロジェクトの作成
+## <a name="step3">3. Truffle プロジェクトの作成</a>
 
 プロジェクトのためのディレクトリの作成
 
@@ -121,7 +110,7 @@ truffle プロジェクトを作成
       
 ここまでで truffle プロジェクトの初期化ができました。
 
-## 最初のスマートコントラクトを作る
+## <a name="step4">4. 最初のスマートコントラクトを作る≤</a>
 
 次にスマートコントラクトを作ります。  
 `contracts/Hello.sol` というファイルを作成し、以下のコードを貼り付けてください。
@@ -158,7 +147,7 @@ truffle プロジェクトを作成
 コードだけからではそのスマートコントラクトが持っているインターフェースを知ることは難しいです。
 `abi` を使うことで、スマートコントラクトが持っているインターフェースを知ることができます。
 
-## スマートコントラクトを ganache-cli にデプロイする
+## <a name="step5">5. スマートコントラクトを Ethereum シミュレータにデプロイする</a>
 
 さて、実際に動かしてみましょう。動作させるためにはコントラクトをチェーンにデプロイする必要があります。
 truffle には ganache-cli(旧testrpc) という開発用の Ethereum シミュレーターがバンドルされていますので、
@@ -295,7 +284,7 @@ migrate を実行すると↑のように実行結果が表示されます。こ
 > 一度 migrate 下あとにもう一度 migrate を実行しようとすると `Error: Returned values aren't valid, did it run Out of Gas?`
 > のようなエラーが出ることがあります。この場合は、 `--reset` オプションをつけて `> migrate --reset` を試してみてください。
 
-## DApp のフロントエンドを作る
+## <a name="step6">6. DApp のフロントエンドを作る</a>
 
 次にブラウザで操作するインターフェースを作っていきます。
 
@@ -355,7 +344,7 @@ var abi = [];                                // ← build/contracts/Hello.json �
 
 起動したら http://localhost:1234 にアクセスしてください。
 
-## Ethereum シミュレーターにつないで DApp を動かす
+## <a name="step7">7. Ethereum シミュレーターにつないで DApp を動かす</a>
 
 このままだとこの DApp はローカルで動作している Ethereum シミュレータに接続されていません。 `src/index.js` 
 から分かる通り、ブロックチェーンへ接続するための adapter を MetaMask から取得しています。MetaMask の設定
@@ -397,7 +386,7 @@ from で指定したアカウントから、to で指定したアカウントへ
 
 これで MetaMask のアカウントに ETH が入りましたので、DApp を実行できます。
 
-## テストネットで DApp を動かす
+## <a name="step8">8. テストネットで DApp を動かす</a>
 
 Ethereum のテストネットは複数ありますが、今回は Ropsten を使います。
 
@@ -500,7 +489,7 @@ const infuraKey = "[INFURA.io から PROJECT ID を貼り付ける]";
 世界中の誰もがあなたのはじめての DApp を試すことができます。IPFS などの分散ストレージにデプロイすればなお
 良いですね。
 
-## 最後に
+## <a name="step9">9. 最後に</a>
 
 お疲れ様でした。いかがでしたか？Ethereum を使った DApp 開発の雰囲気を掴んでいただけたなら幸いです。あなた
 がこれをきっかけにインパクトがある新しいブロックチェーンプロダクトの開発に関心を深め、我々と一緒にその可能性

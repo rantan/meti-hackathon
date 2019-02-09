@@ -131,7 +131,7 @@ truffle プロジェクトを作成
 
 試しにコンパイルしてみましょう。
 
-    $(npm bin)/truffle compile
+    $ $(npm bin)/truffle compile
     
 すると、`build` というディレクトリが作られます。この JSON ファイルの中にコントラクトのメタ情報や
 バイトコードが入っています。
@@ -380,7 +380,7 @@ var abi = [];                                // ← build/contracts/Hello.json �
 
 truffle の開発コンソールから送金をしましょう。送金には `web3.eth.sendTransaction` を使います。
 
-    truffle(develop)> await web3.eth.sendTransaction({from: '0xc4032...', to: '0x1630814....', value: web3.utils.toWei('1', 'ether')})Ω
+    truffle(develop)> await web3.eth.sendTransaction({from: '0xc4032...', to: '0x1630814....', value: web3.utils.toWei('1', 'ether')})
     
 from で指定したアカウントから、to で指定したアカウントへ 1 ether 送ります。 
 
@@ -448,7 +448,7 @@ const infuraKey = "[INFURA.io から PROJECT ID を貼り付ける]";
 
 準備ができたので接続してみます。以下のコマンドを使います。
 
-    $ truffle console --network ropsten
+    $ $(npm bin)/truffle console --network ropsten
 
 アカウントと残高を確認してみましょう。
 

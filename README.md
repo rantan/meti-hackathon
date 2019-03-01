@@ -57,6 +57,8 @@ Hello, Ethereum! スマートコントラクトの開発を学んで、Ethereum 
 
 さっそく、[Ropsten Faucet](https://faucet.metamask.io/) から 1 ether を受け取りましょう。
 
+※現在この Rposten Faucet は残高がなく、 ETH を受け取れないようです。 `ropsten faucet` などで調べて、受取可能な faucet を探してください。
+
 ![Faucet](https://raw.githubusercontent.com/rantan/meti-hackathon/master/images/03.png "Faucet")  
 ![Faucet](https://raw.githubusercontent.com/rantan/meti-hackathon/master/images/02.png "Faucet")
 

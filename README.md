@@ -6,6 +6,10 @@ Hello, Ethereum! スマートコントラクトの開発を学んで、Ethereum 
 このリポジトリは2019年2月9日から開催される経済産業省主催の [ブロックチェーンハッカソン2019](https://www.eventbrite.com/e/2019-tickets-55006025503) 
 のプログラムの一部として行う Ethereum ブロックチェーンを使った DApp 開発のハンズオンのために用意されました。
 
+## 動画
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=2jbuG6B9Rh8" target="_blank"><img src="http://img.youtube.com/vi/2jbuG6B9Rh8/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 ## ゴール
 
 このワークショップでは以下をゴールとします。
